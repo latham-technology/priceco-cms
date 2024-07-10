@@ -45,6 +45,7 @@ jobs:
                     JWT_SECRET=${{ secrets.JWT_SECRET }}
                     NUXT_MAILGUN_API_KEY=${{ secrets.NUXT_MAILGUN_API_KEY }}
                     TRANSFER_TOKEN_SALT=${{ secrets.TRANSFER_TOKEN_SALT }}
+                    NODE_ENV=production
 
             - name: Deploy Image to CapRrover
               uses: caprover/deploy-from-github@v1.1.2
