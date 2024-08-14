@@ -1,6 +1,7 @@
 name: Build and Deploy Docker Image
 
 on:
+    workflow_dispatch:
     push:
         branches: ['main']
 
@@ -36,16 +37,16 @@ jobs:
                   file: ./Dockerfile
                   push: true
                   tags: |
-                    ${{ env.IMAGE_URL }}:${{ steps.sha.outputs.sha_short }}
-                    ${{ env.IMAGE_URL }}:latest
+                      ${{ env.IMAGE_URL }}:${{ steps.sha.outputs.sha_short }}
+                      ${{ env.IMAGE_URL }}:latest
                   build-args: |
-                    ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
-                    API_TOKEN_SALT=${{ secrets.API_TOKEN_SALT }}
-                    APP_KEYS=${{ secrets.APP_KEYS }}
-                    JWT_SECRET=${{ secrets.JWT_SECRET }}
-                    NUXT_MAILGUN_API_KEY=${{ secrets.NUXT_MAILGUN_API_KEY }}
-                    TRANSFER_TOKEN_SALT=${{ secrets.TRANSFER_TOKEN_SALT }}
-                    NODE_ENV=production
+                      ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
+                      API_TOKEN_SALT=${{ secrets.API_TOKEN_SALT }}
+                      APP_KEYS=${{ secrets.APP_KEYS }}
+                      JWT_SECRET=${{ secrets.JWT_SECRET }}
+                      NUXT_MAILGUN_API_KEY=${{ secrets.NUXT_MAILGUN_API_KEY }}
+                      TRANSFER_TOKEN_SALT=${{ secrets.TRANSFER_TOKEN_SALT }}
+                      NODE_ENV=production
 
             - name: Deploy Image to CapRrover
               uses: caprover/deploy-from-github@v1.1.2
@@ -53,4 +54,4 @@ jobs:
                   server: '${{ secrets.CAPROVER_SERVER }}'
                   app: '${{ secrets.APP_NAME }}'
                   token: '${{ secrets.APP_TOKEN }}'
-                  image: ${{ env.IMAGE_URL }}
+                  image: '${{ env.IMAGE_URL }}:${{ steps.sha.outputs.sha_short }}'
