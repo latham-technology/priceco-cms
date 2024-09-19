@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
     /**
      * An asynchronous register function that runs before
@@ -37,7 +35,8 @@ module.exports = {
                     .then(console.log)
 
                 if (admins.length === 0) {
-                    let tempPass = params.password
+                    const tempPass = params.password
+
                     let verifyRole = strapi.query('role', 'admin').findOne({
                         code: 'strapi-super-admin',
                     })
@@ -62,7 +61,7 @@ module.exports = {
                 }
             } catch (error) {
                 strapi.log.error(
-                    `Couldn't create Admin account during bootstrap: `,
+                    "Couldn't create Admin account during bootstrap: ",
                     error,
                 )
             }

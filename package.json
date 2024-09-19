@@ -1,5 +1,5 @@
 {
-    "name": "priceco-api",
+    "name": "priceco-cms",
     "version": "0.1.0",
     "private": true,
     "description": "A Strapi application",
@@ -10,6 +10,10 @@
     "scripts": {
         "build": "strapi build",
         "dev": "strapi develop",
+        "lint": "npx eslint .",
+        "lint:fix": "npm run lint . -- --fix",
+        "prettier": "npx prettier . --check",
+        "prettier:fix": "npm run prettier -- --write",
         "start": "strapi start",
         "strapi": "strapi"
     },
@@ -24,6 +28,11 @@
         "react-router-dom": "5.3.4",
         "strapi-plugin-publisher": "^1.5.4",
         "styled-components": "5.3.3"
+    },
+    "devDependencies": {
+        "@notafunction/eslint-config": "^0.2.0",
+        "@notafunction/prettier-config": "^1.0.2",
+        "babel-eslint": "^10.1.0"
     },
     "engines": {
         "node": ">=18.0.0 <=20.x.x",

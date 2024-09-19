@@ -12,15 +12,19 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "name": {
-            "type": "string",
-            "required": true
-        },
         "images": {
             "type": "media",
             "multiple": true,
             "required": true,
             "allowedTypes": ["images"]
+        },
+        "startDate": {
+            "type": "date",
+            "required": true
+        },
+        "endDate": {
+            "type": "date",
+            "required": true
         }
     }
 }

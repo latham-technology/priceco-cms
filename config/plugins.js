@@ -1,21 +1,21 @@
 module.exports = ({ env }) => ({
-    'publisher': {
+    publisher: {
         enabled: true,
         config: {
             hooks: {
                 beforePublish: async ({ strapi, uid, entity }) => {
-                    console.log('beforePublish');
+                    console.log('beforePublish')
                 },
                 afterPublish: async ({ strapi, uid, entity }) => {
-                    console.log('afterPublish');
+                    console.log('afterPublish')
                 },
                 beforeUnpublish: async ({ strapi, uid, entity }) => {
-                    console.log('beforeUnpublish');
+                    console.log('beforeUnpublish')
                 },
                 afterUnpublish: async ({ strapi, uid, entity }) => {
-                    console.log('afterUnpublish');
+                    console.log('afterUnpublish')
                 },
             },
         },
     },
-});
+})
