@@ -1,43 +1,43 @@
 {
-    "name": "priceco-cms",
-    "version": "0.1.0",
-    "private": true,
-    "description": "A Strapi application",
-    "license": "MIT",
-    "author": {
-        "name": "A Strapi developer"
-    },
-    "scripts": {
-        "build": "strapi build",
-        "dev": "strapi develop",
-        "lint": "npx eslint .",
-        "lint:fix": "npm run lint . -- --fix",
-        "prettier": "npx prettier . --check",
-        "prettier:fix": "npm run prettier -- --write",
-        "start": "strapi start",
-        "strapi": "strapi"
-    },
-    "dependencies": {
-        "@strapi/plugin-i18n": "^4.25.2",
-        "@strapi/plugin-users-permissions": "^4.25.2",
-        "@strapi/strapi": "^4.25.2",
-        "better-sqlite3": "8.6.0",
-        "mysql": "^2.18.1",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
-        "react-router-dom": "5.3.4",
-        "styled-components": "5.3.3"
-    },
-    "devDependencies": {
-        "@notafunction/eslint-config": "^0.2.0",
-        "@notafunction/prettier-config": "^1.0.2",
-        "babel-eslint": "^10.1.0"
-    },
-    "engines": {
-        "node": ">=18.0.0 <=20.x.x",
-        "npm": ">=6.0.0"
-    },
-    "strapi": {
-        "uuid": "a7964d47-fa8e-4bd1-85fe-6eabe73fef4e"
-    }
+  "name": "priceco-cms",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "scripts": {
+    "build": "strapi build",
+    "dev": "strapi develop",
+    "lint": "npx eslint .",
+    "lint:fix": "npm run lint . -- --fix",
+    "prettier": "npx prettier . --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/email": "^5.0.0",
+    "@strapi/plugin-users-permissions": "^5",
+    "@strapi/strapi": "^5",
+    "better-sqlite3": "8.6.0",
+    "mysql2": "^3.11.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@notafunction/eslint-config": "^0.2.0",
+    "@notafunction/prettier-config": "^1.0.2",
+    "babel-eslint": "^10.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "a7964d47-fa8e-4bd1-85fe-6eabe73fef4e"
+  }
 }
