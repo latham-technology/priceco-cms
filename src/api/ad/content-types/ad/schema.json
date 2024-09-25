@@ -1,30 +1,31 @@
 {
-    "kind": "collectionType",
-    "collectionName": "ads",
-    "info": {
-        "singularName": "ad",
-        "pluralName": "ads",
-        "displayName": "Ad",
-        "description": ""
+  "kind": "collectionType",
+  "collectionName": "ads",
+  "info": {
+    "singularName": "ad",
+    "pluralName": "ads",
+    "displayName": "Ad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startDate": {
+      "type": "date",
+      "required": true
     },
-    "options": {
-        "draftAndPublish": true
+    "endDate": {
+      "type": "date",
+      "required": true
     },
-    "pluginOptions": {},
-    "attributes": {
-        "images": {
-            "type": "media",
-            "multiple": true,
-            "required": true,
-            "allowedTypes": ["images"]
-        },
-        "startDate": {
-            "type": "date",
-            "required": true
-        },
-        "endDate": {
-            "type": "date",
-            "required": true
-        }
+    "pages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ad.single-page",
+      "required": true,
+      "min": 1
     }
+  }
 }
