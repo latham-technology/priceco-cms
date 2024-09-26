@@ -20,12 +20,13 @@
       "type": "date",
       "required": true
     },
-    "pages": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ad.single-page",
-      "required": true,
-      "min": 1
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

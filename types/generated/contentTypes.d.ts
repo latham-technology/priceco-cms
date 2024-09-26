@@ -508,14 +508,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     attributes: {
         startDate: Schema.Attribute.Date & Schema.Attribute.Required
         endDate: Schema.Attribute.Date & Schema.Attribute.Required
-        pages: Schema.Attribute.Component<'ad.single-page', true> &
-            Schema.Attribute.Required &
-            Schema.Attribute.SetMinMax<
-                {
-                    min: 1
-                },
-                number
-            >
+        images: Schema.Attribute.Media<'images', true>
         createdAt: Schema.Attribute.DateTime
         updatedAt: Schema.Attribute.DateTime
         publishedAt: Schema.Attribute.DateTime
